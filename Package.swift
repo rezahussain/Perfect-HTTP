@@ -38,10 +38,10 @@ let package = Package(
 )
 #else
 let package = Package(
-	platforms: [
+	name: "PerfectHTTP",
+    platforms: [
           .macOS(.v10_15)
       ],
-	name: "PerfectHTTP",
 	products: [
 		.library(name: "PerfectHTTP", targets: ["PerfectHTTP"])
 	],
