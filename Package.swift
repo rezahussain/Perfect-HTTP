@@ -43,11 +43,11 @@ let package = Package(
 		.library(name: "PerfectHTTP", targets: ["PerfectHTTP"])
 	],
 	dependencies: [
-		.package(url: "https://github.com/PerfectlySoft/PerfectLib.git", from: "3.0.0"),
+        .package(url: "https://github.com/PerfectlySoft/PerfectLib.git", branch: "master"),
 		.package(url: "https://github.com/PerfectlySoft/Perfect-Net.git", from: "3.0.0")
 	], targets: [
-		.target(name: "PerfectHTTP", dependencies: ["PerfectLib", "PerfectNet"]),
-		.testTarget(name: "PerfectHTTPTests", dependencies: ["PerfectHTTP", "PerfectNet"])
+		.target(name: "PerfectHTTP", dependencies: ["PerfectLib", .product(name: "PerfectNet", package: "Perfect-Net")]),
+		.testTarget(name: "PerfectHTTPTests", dependencies: ["PerfectHTTP", .product(name: "PerfectNet", package: "Perfect-Net")])
   ]
 )
 #endif
